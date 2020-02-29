@@ -1,4 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  
+  <view class="search">
+    <view class="search_mian">
+      <text class="iconfont icon-sousuo"></text>
+      <text>搜索</text>
+    </view>
+  </view>
 </view>
