@@ -20,7 +20,7 @@ const ajax = (config = {}) => {
 }
 ajax.defaults = {
   // 配置基准路径
-  baseURL: "http://157.122.54.189:9095"
+  baseURL: "https://api-hmugo-web.itheima.net/api/public/v1"
 }
 ajax.onError = (res) => {
   if(res.statusCode === 500){

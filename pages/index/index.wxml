@@ -1,9 +1,21 @@
 <!--index.wxml-->
 <view class="container">
+<!-- 搜索框 -->
   <view class="search">
     <view class="search_mian">
       <text class="iconfont icon-sousuo"></text>
       <text>搜索</text>
     </view>
   </view>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{background}}" wx:key="index">
+      <swiper-item>
+      <image src="{{item.image_src}}" class="swiper_image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 目录 -->
+ 
 </view>
