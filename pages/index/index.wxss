@@ -4,9 +4,9 @@
 }
 .search .search_mian{
   background-color: #fff;
-  height: 30px;
+  height: 70rpx;
   border-radius: 4px;
   text-align: center;
-  line-height: 30px;
+  line-height: 70rpx;
   color: #b5b5b5;
 }
