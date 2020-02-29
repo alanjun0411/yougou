@@ -10,7 +10,20 @@
   line-height: 30px;
   color: #b5b5b5;
 }
+.swiper_main{
+  height: 350rpx;
+}
 .swiper_image{
   width: 100%;
   height: 100%;
+}
+.catitems{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  padding: 15rpx 0;
+}
+.catitems image{
+  width: 128rpx;
+  height: 140rpx;
 }

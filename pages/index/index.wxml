@@ -9,7 +9,10 @@
   </view>
   <!-- 轮播图 -->
   <swiper indicator-dots="{{indicatorDots}}"
-    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    autoplay="{{autoplay}}"
+    interval="{{interval}}"
+    duration="{{duration}}"
+    class="swiper_main">
     <block wx:for="{{background}}" wx:key="index">
       <swiper-item>
       <image src="{{item.image_src}}" class="swiper_image"></image>
@@ -17,5 +20,11 @@
     </block>
   </swiper>
   <!-- 目录 -->
- 
+  <view class="catitems">
+    <block wx:for="{{catitems}}" wx:key="index">
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}"></image>
+      </navigator>
+    </block>
+  </view>
 </view>

@@ -28,5 +28,6 @@ Page({
       })
       console.log(this.data.catitems)
     })
+    
   }
 })
