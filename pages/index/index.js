@@ -10,7 +10,9 @@ Page({
     // 分类数据
     catitems:[],
     // 楼层数据
-    floordata:[]
+    floordata:[],
+    // 屏幕滑动
+    scrollTop: 0
   },
   onLoad: function () {
     // 加载轮播图数据
@@ -21,7 +23,7 @@ Page({
        background: res.data.message
      })
    })
-  //  加载分类数据
+    //  加载分类数据
     wx.ajax({
       url: "/home/catitems"
     }).then((res) => {
@@ -37,6 +39,17 @@ Page({
         floordata: res.data.message
       })
       console.log(this.data.floordata)
+    })
+  },
+  gotoTop: function () {
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
+  },
+  onPageScroll: function (e) {
+    this.setData({
+      scrollTop: e.scrollTop
     })
   }
 })

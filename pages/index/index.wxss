@@ -56,7 +56,24 @@
   margin-left: 8rpx;
 }
 .floor_bottom_title{
-  margin: 20rpx 0;
+  padding: 20rpx 0;
   color: #ccc;
   text-align: center;
+  background-color: #f4f3f3;
+}
+.goToTop{
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #b5b5b5;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #fafafa;
+}
+.goToTopiconfont{
+  margin-top: 7rpx;
 }

@@ -63,4 +63,10 @@
       <text>我也是有底线的...</text>
     </view>
   </view>
+  <!-- 回到顶部 -->
+  <view class="goToTop" bindtap="gotoTop" wx:if="{{scrollTop}}">
+     <text class="iconfont icon-icon-test1 goToTopiconfont"></text>
+    <text>顶部</text>
+  </view>
 </view>
+
