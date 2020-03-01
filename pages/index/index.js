@@ -8,7 +8,9 @@ Page({
     interval: 2000,
     duration: 500,
     // 分类数据
-    catitems:[]
+    catitems:[],
+    // 楼层数据
+    floordata:[]
   },
   onLoad: function () {
     // 加载轮播图数据
@@ -26,8 +28,15 @@ Page({
       this.setData({
         catitems: res.data.message
       })
-      console.log(this.data.catitems)
     })
-    
+    // 加载楼层数据
+    wx.ajax({
+      url: "/home/floordata"
+    }).then((res) => {
+      this.setData({
+        floordata: res.data.message
+      })
+      console.log(this.data.floordata)
+    })
   }
 })

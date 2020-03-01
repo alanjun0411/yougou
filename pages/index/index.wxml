@@ -3,8 +3,10 @@
 <!-- 搜索框 -->
   <view class="search">
     <view class="search_mian">
-      <text class="iconfont icon-sousuo"></text>
-      <text>搜索</text>
+      <navigator url="/pages/search/search">
+        <text class="iconfont icon-sousuo"></text>
+        <text>搜索</text>
+      </navigator>
     </view>
   </view>
   <!-- 轮播图 -->
@@ -15,7 +17,9 @@
     class="swiper_main">
     <block wx:for="{{background}}" wx:key="index">
       <swiper-item>
-      <image src="{{item.image_src}}" class="swiper_image"></image>
+        <navigator url="">
+           <image src="{{item.image_src}}" class="swiper_image"></image>
+        </navigator>
       </swiper-item>
     </block>
   </swiper>
@@ -26,5 +30,37 @@
         <image src="{{item.image_src}}"></image>
       </navigator>
     </block>
+  </view>
+  <!-- 楼层 -->
+  <view class="floor">
+    <view class="onefloor"
+    wx:for="{{floordata}}"
+    wx:for-item="myItem"
+    wx:for-index="myIndex"
+    wx:key="myIndex" >
+      <view class="floorTitle"> 
+        <image src="{{myItem.floor_title.image_src}}"></image>
+      </view>
+      <view class="floorContent">
+        <view class="floorContent_left">
+         <navigator url="">
+           <image
+           src="{{myItem.product_list[0].image_src}}"
+           style="width:{{myItem.product_list[0].image_width}}rpx"></image>
+         </navigator>
+        </view>
+        <view class="floorContent_right">
+          <block wx:for="{{myItem.product_list}}" wx:key="index" wx:if="{{index > 0}}">
+            <image
+            src="{{item.image_src}}"
+            style="width:{{item.image_width}}rpx"></image>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="floor_bottom_title" wx:if="{{floordata.length !== 0}}">
+      <text class="iconfont icon-weixiao-"></text>
+      <text>我也是有底线的...</text>
+    </view>
   </view>
 </view>
