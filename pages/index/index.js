@@ -54,5 +54,8 @@ Page({
     this.setData({
       scrollTop
     })
+  },
+  onPullDownRefresh () {
+    wx.stopPullDownRefresh()
   }
 })

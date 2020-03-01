@@ -1,2 +1,8 @@
 <!--pages/category/main.wxml-->
-<text>pages/category/main.wxml</text>
+<view class="catitems">
+  <!-- 搜索框 -->
+  <view class="onesearch">
+    <search tip="搜索">
+    </search>
+  </view>
+</view>
