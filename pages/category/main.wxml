@@ -17,7 +17,9 @@
       </view>
       <view class="onecontent_right">
         <view class="onecontent_right_title">
-          <image src="{{'https://api-hmugo-web.itheima.net/pyg/pic_floor03_2@2x.png'}}"></image>
+          <navigator url="">
+            <image src="{{'https://api-hmugo-web.itheima.net/pyg/pic_floor03_2@2x.png'}}"></image>
+          </navigator>
         </view>
         <view class="onecontent_right_content">
             <view class="onecontent_right_content_scroll">
