@@ -12,7 +12,7 @@ Page({
     // 楼层数据
     floordata:[],
     // 屏幕滑动
-    scrollTop: 0
+    scrollTop: false
   },
   onLoad: function () {
     // 加载轮播图数据
@@ -48,8 +48,11 @@ Page({
     })
   },
   onPageScroll: function (e) {
+    let scrollTop = e.scrollTop > 100 ? true : false
+    // 避免频繁的setData消耗大量资源设置筛选
+    if (scrollTop === this.data.scrollTop) return
     this.setData({
-      scrollTop: e.scrollTop
+      scrollTop
     })
   }
 })
