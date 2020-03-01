@@ -1,14 +1,12 @@
 <!--index.wxml-->
 <view class="container">
 <!-- 搜索框 -->
-  <view class="search">
-    <view class="search_mian">
-      <navigator url="/pages/search/search">
-        <text class="iconfont icon-sousuo"></text>
-        <text>搜索</text>
-      </navigator>
-    </view>
+  <view class="onesearch">
+    <search tip="搜索">
+    </search>
   </view>
+  <!-- 空白填充 -->
+  <view class="kobai"></view>
   <!-- 轮播图 -->
   <swiper indicator-dots="{{indicatorDots}}"
     autoplay="{{autoplay}}"

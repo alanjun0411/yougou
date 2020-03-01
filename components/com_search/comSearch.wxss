@@ -1,0 +1,14 @@
+/* components/com_search/comSearch.wxss */
+@import "../../common/style.wxss";
+.search{
+  padding: 5px 10px 15px;
+  background-color: #fb3150;
+}
+.search .search_mian{
+  background-color: #fff;
+  height: 30px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 30px;
+  color: #b5b5b5;
+}

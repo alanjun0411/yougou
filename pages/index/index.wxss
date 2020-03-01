@@ -1,14 +1,12 @@
-.search{
-  padding: 5px 10px 15px;
-  background-color: #fb3150;
+.onesearch{
+  width: 750rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
-.search .search_mian{
-  background-color: #fff;
-  height: 30px;
-  border-radius: 4px;
-  text-align: center;
-  line-height: 30px;
-  color: #b5b5b5;
+.kobai{
+  height: 50px;
 }
 .swiper_main{
   height: 350rpx;

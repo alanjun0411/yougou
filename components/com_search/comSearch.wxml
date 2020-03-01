@@ -1,0 +1,9 @@
+<!--components/com_search/comSearch.wxml-->
+<view class="search">
+  <view class="search_mian">
+    <navigator url="/pages/search/search">
+      <text class="iconfont icon-sousuo"></text>
+      <text>{{tip}}</text>
+    </navigator>
+  </view>
+</view>
