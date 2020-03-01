@@ -1,8 +1,51 @@
 <!--pages/category/main.wxml-->
-<view class="catitems">
+<view class="categories">
   <!-- 搜索框 -->
   <view class="onesearch">
-    <search tip="搜索">
-    </search>
+    <search tip="搜索"></search>
+  </view>
+  <view class="content">
+    <view class="onecontent">
+      <view class="onecontent_left">
+        <view class="onecontent_left_main">
+          <view wx:for="{{categories}}" wx:key="index" class="onecategorie {{selectID === index ? 'selectID' : ''}}" bindtap="categoriesChange" data-index="{{index}}">
+            <view class="onecontent_left_main_b {{selectID === index ? 'onecontent_left_main_b_select' : ''}}">
+              <text>{{item.cat_name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="onecontent_right">
+        <view class="onecontent_right_title">
+          <image src="{{'https://api-hmugo-web.itheima.net/pyg/pic_floor03_2@2x.png'}}"></image>
+        </view>
+        <view class="onecontent_right_content">
+            <view class="onecontent_right_content_scroll">
+              <view class="onecontent_right_content_one" wx:for="{{categories[selectID].children}}" wx:key="index">
+              <view class="onecontent_right_content_one_title">
+                <text>/</text>
+                <text class="onecontent_right_content_one_title_cat_name">{{item.cat_name}}</text>
+                <text>/</text>
+              </view>
+              <view class="onecontent_right_content_one_title_content">
+                <block wx:for="{{item.children}}" wx:key="index">
+                  <navigator url="">
+                    <view class="onecontent_right_content_one_title_content_one">
+                    <view>
+                      <image src="{{item.cat_icon}}"></image>
+                    </view>
+                    <view class="onecontent_right_content_one_title_content_one_cat_name">
+                      <text>{{item.cat_name}}</text>
+                    </view>
+                    </view>
+                  </navigator>
+                  
+                </block>
+              </view>
+            </view>
+            </view>
+        </view>
+      </view>
+    </view>
   </view>
 </view>
