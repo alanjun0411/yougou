@@ -22,8 +22,8 @@
           </navigator>
         </view>
         <view class="onecontent_right_content">
-            <view class="onecontent_right_content_scroll">
-              <view class="onecontent_right_content_one" wx:for="{{categories[selectID].children}}" wx:key="index">
+          <scroll-view scroll-y="true" style="height: 100%;" scroll-top="{{scrollTop}}">
+           <view class="onecontent_right_content_one" wx:for="{{categories[selectID].children}}" wx:key="index" id="{{index}}">
               <view class="onecontent_right_content_one_title">
                 <text>/</text>
                 <text class="onecontent_right_content_one_title_cat_name">{{item.cat_name}}</text>
@@ -34,7 +34,7 @@
                   <navigator url="">
                     <view class="onecontent_right_content_one_title_content_one">
                     <view>
-                      <image src="{{item.cat_icon}}"></image>
+                      <image mode="aspectFill" src="{{item.cat_icon}}"></image>
                     </view>
                     <view class="onecontent_right_content_one_title_content_one_cat_name">
                       <text>{{item.cat_name}}</text>
@@ -45,7 +45,7 @@
                 </block>
               </view>
             </view>
-            </view>
+        </scroll-view>
         </view>
       </view>
     </view>

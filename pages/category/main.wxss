@@ -33,7 +33,7 @@
 }
 .selectID{
   color: #f83554;
-  background-color: #ffff;
+  background-color: #fff;
 }
 .onecontent_right{
   height: 100%;
@@ -55,7 +55,7 @@
   top: 50px;
   bottom: 0;
   width: 510rpx;
-  padding-top: 240rpx;
+  padding-top: 220rpx;
   overflow: hidden;
 }
 .onecontent_right_content_scroll{
@@ -63,6 +63,7 @@
   overflow: scroll;
 }
 .onecontent_right_content_one_title{
+  font-size: 30rpx;
   padding: 40rpx 0;
   text-align: center;
   color: #ccc;
