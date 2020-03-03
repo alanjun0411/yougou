@@ -41,7 +41,7 @@
       </view>
       <view class="floorContent">
         <view class="floorContent_left">
-         <navigator url="">
+         <navigator url="/pages/goods_list/index?query={{myItem.product_list[0].query}}">
            <image
            src="{{myItem.product_list[0].image_src}}"
            style="width:{{myItem.product_list[0].image_width}}rpx"></image>
@@ -49,9 +49,9 @@
         </view>
         <view class="floorContent_right">
           <block wx:for="{{myItem.product_list}}" wx:key="index" wx:if="{{index > 0}}">
-            <image
-            src="{{item.image_src}}"
-            style="width:{{item.image_width}}rpx"></image>
+            <navigator url="/pages/goods_list/index?query={{item.query}}">
+              <image src="{{item.image_src}}" style="width:{{item.image_width}}rpx"></image>
+            </navigator>
           </block>
         </view>
       </view>

@@ -6,11 +6,17 @@
       <text class="iconfont icon-sousuo"></text>
     </view>
     <view class="search_mian_input_input">
-      <input class="weui-input searchinput" focus="{{true}}"  maxlength="10" bindinput="bindKeyInput" placeholder="输入你想要的商品"/>
+      <input class="weui-input searchinput" focus="{{foucs}}"  maxlength="10" bindinput="bindKeyInput" placeholder="输入你想要的商品" type="text" value="{{inputValue}}" bindconfirm="inputconfirm"/>
     </view>
    </view>
-   <view class="search_mian_button">
-    <text>搜索</text>
+   <view class="search_mian_button" bindtap="bindDeleteInput">
+    <text>取消</text>
+   </view>
+   <!-- 选择列表 -->
+   <view class="selectList" style="height: {{newHeight}}px;" wx:if="{{keyValue.length !== 0}}">
+      <scroll-view scroll-y="true" style="height: 100%;">
+        <view class="selectList_one" wx:for="{{keyValue}}" wx:key="index" id="{{item.goods_id}}" bindtap="selectTo">{{item.goods_name}}</view>
+      </scroll-view>
    </view>
   </view>
 </view>

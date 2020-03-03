@@ -1,7 +1,17 @@
 <!--pages/search/search.wxml-->
 <view class="searchPage">
-  <!-- 搜索页 -->
+  <!-- 搜索框 -->
   <view class="searchs">
-    <search></search>
+    <search bindnewDataKey="getData"></search>
+  </view>
+  <!-- 搜索历史 -->
+  <view class="history">
+    <view class="history_title">
+      <text>搜索历史</text>
+      <text class="iconfont icon-shibai detele"bindtap="removeData"></text>
+    </view>
+    <view class="history_content">
+      <view class="history_content_one" wx:for="{{historyKey}}" wx:key="index" bindtap="searchTo" data-item="{{item}}">{{item}}</view>
+    </view>
   </view>
 </view>

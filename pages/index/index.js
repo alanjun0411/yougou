@@ -22,6 +22,7 @@ Page({
      this.setData({
        background: res.data.message
      })
+     console.log(this.data.background)
    })
     //  加载分类数据
     wx.ajax({
@@ -35,10 +36,21 @@ Page({
     wx.ajax({
       url: "/home/floordata"
     }).then((res) => {
-      this.setData({
-        floordata: res.data.message
+      let newdata = res.data.message
+      newdata = newdata.map((v)=>{
+        v.product_list = v.product_list.map((v)=>{
+          v.query = v.navigator_url.slice(v.navigator_url.search("=") + 1)
+          return {
+            ...v
+          }
+        })
+        return {
+          ...v
+        }
       })
-      console.log(this.data.floordata)
+      this.setData({
+        floordata: newdata
+      })
     })
   },
   gotoTop: function () {

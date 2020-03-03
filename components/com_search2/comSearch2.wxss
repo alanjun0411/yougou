@@ -1,7 +1,7 @@
 /* components/com_search2/comSearch2.wxss */
 @import "../../common/style.wxss";
 .search{
-  padding: 15px 10px;
+  padding: 10px 10px;
   background-color: #efefef;
 }
 .search .search_mian{
@@ -16,7 +16,7 @@
   border-radius: 4px;
   background-color: #ffffff;
   height: 100%;
-  margin-right: 30rpx;
+  margin-right: 15px;
 }
 .search_mian_input_ico{
   width: 25px;
@@ -32,6 +32,7 @@
 .searchinput{
   height: 100%;
   font-size: 14px;
+  color: #333;
 }
 .search_mian_button{
   width: 80px;
@@ -47,4 +48,24 @@
   border-color:#38f; 
   background-color: #38f;
   color: #fff;
+}
+.selectList{
+  position: absolute;
+  top: 50px;
+  left: 33px;
+  z-index: 3;
+  width: calc(100vw - 138px);
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  background-color: #fff;
+  overflow: hidden;
+  font-size: 14px;
+  height: 0;
+}
+.selectList_one{
+  padding: 10px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
 }
