@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "search": "../../components/com_search2/comSearch2"
+  },
+  "navigationBarTitleText": "搜索"
 }

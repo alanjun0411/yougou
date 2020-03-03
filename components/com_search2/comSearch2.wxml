@@ -1,0 +1,16 @@
+<!--components/com_search2/comSearch2.wxml-->
+<view class="search">
+  <view class="search_mian">
+   <view class="search_mian_input">
+    <view class="search_mian_input_ico">
+      <text class="iconfont icon-sousuo"></text>
+    </view>
+    <view class="search_mian_input_input">
+      <input class="weui-input searchinput" focus="{{true}}"  maxlength="10" bindinput="bindKeyInput" placeholder="输入你想要的商品"/>
+    </view>
+   </view>
+   <view class="search_mian_button">
+    <text>搜索</text>
+   </view>
+  </view>
+</view>
