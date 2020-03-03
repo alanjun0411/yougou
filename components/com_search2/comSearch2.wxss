@@ -60,7 +60,6 @@
   background-color: #fff;
   overflow: hidden;
   font-size: 14px;
-  height: 0;
 }
 .selectList_one{
   padding: 10px 5px;
