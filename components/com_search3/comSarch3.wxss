@@ -1,1 +1,34 @@
 /* components/com_search3/comSarch3.wxss */
+@import "../../common/style.wxss";
+.search{
+  padding: 10px;
+  background-color: #efefef;
+}
+.search .search_mian{
+  display: flex;
+  justify-content: space-around;
+  height: 30px;
+  color: #b5b5b5;
+}
+.search_mian_input{
+  display: flex;
+  flex: 1;
+  border-radius: 4px;
+  background-color: #ffffff;
+  height: 100%;
+}
+.search_mian_input_ico{
+  width: 25px;
+  height: 100%;
+  text-align: center;
+  line-height: 30px;
+}
+.search_mian_input_input{
+  flex: 1;
+  line-height: 30px;
+  width: 100px;
+  height: 30px;
+}
+.search_mian_input_input view{
+  color: #333;
+}

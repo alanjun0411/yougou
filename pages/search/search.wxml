@@ -8,7 +8,7 @@
   <view class="history">
     <view class="history_title">
       <text>搜索历史</text>
-      <text class="iconfont icon-shibai detele"bindtap="removeData"></text>
+      <text class="iconfont icon-shanchu detele" bindtap="removeData"></text>
     </view>
     <view class="history_content">
       <view class="history_content_one" wx:for="{{historyKey}}" wx:key="index" bindtap="searchTo" data-item="{{item}}">{{item}}</view>

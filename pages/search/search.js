@@ -26,7 +26,7 @@ Page({
       key: "searchData",
       data: historyKey
     })
-    wx.navigateTo({
+    wx.redirectTo({
       url: `/pages/goods_list/index?query=${value}`,
     })
     setTimeout(()=>{

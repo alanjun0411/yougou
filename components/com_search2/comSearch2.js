@@ -14,7 +14,8 @@ Component({
     inputValue: '',
     foucs: true,
     keyValue: [],
-    newHeight: 0
+    newHeight: 0,
+    loading: false
   },
 
   /**
@@ -32,15 +33,12 @@ Component({
           newHeight: 0
         })
       } else {
-        wx.ajax({
-          url: `/goods/qsearch?query=${e.detail.value}`
-        }).then((res) => {
-          let heis = res.data.message.length > 6 ? '340' : ''
+        if (!this.data.loading){
           this.setData({
-            keyValue: res.data.message,
-            newHeight: heis
+            loading: true
           })
-        })
+          this.getData(e.detail.value)
+        }
       }
     },
     bindDeleteInput: function () {
@@ -71,7 +69,7 @@ Component({
           }
         }
       })
-      wx.navigateTo({
+      wx.redirectTo({
         url: `/pages/goods_list/index?query=${hisThis}`
       }),
       setTimeout(() => {
@@ -92,13 +90,28 @@ Component({
     },
     selectTo: function(e) {
       let id = e.currentTarget.id
-      wx.navigateTo({
+      wx.redirectTo({
         url: `/pages/goods_detail/index?id=${id}`
       })
       this.setData({
         inputValue: '',
         keyValue: [],
         newHeight: 0
+      })
+    },
+    getData: function(value) {
+      wx.ajax({
+        url: `/goods/qsearch?query=${value}`
+      }).then((res) => {
+        let heis = res.data.message.length > 6 ? '340' : ''
+        this.setData({
+          keyValue: res.data.message,
+          newHeight: heis,
+          loading: false
+        })
+        if (value !== this.data.inputValue) {
+          this.getData(this.data.inputValue)
+        }
       })
     }
   }

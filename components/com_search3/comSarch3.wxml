@@ -1,2 +1,12 @@
-<!--components/com_search3/comSarch3.wxml-->
-<text>components/com_search3/comSarch3.wxml</text>
+<view class="search">
+  <view class="search_mian" bindtap="searchTo">
+    <view class="search_mian_input">
+    <view class="search_mian_input_ico">
+      <text class="iconfont icon-sousuo"></text>
+    </view>
+    <view class="search_mian_input_input">
+     <view>{{defValue}}</view>
+    </view>
+   </view>
+  </view>
+</view>
