@@ -16,12 +16,10 @@ Page({
 
   },
   searchTo: function (e) {
-    const historyKey = this.data.historyKey
+    let historyKey = this.data.historyKey
     const value = e.currentTarget.dataset.item
-    if (historyKey.indexOf(value) !== -1) {
-      historyKey.splice(historyKey.indexOf(value), 1)
-    }
     historyKey.unshift(value)
+    historyKey = [...new Set(historyKey)]
     wx.setStorage({
       key: "searchData",
       data: historyKey

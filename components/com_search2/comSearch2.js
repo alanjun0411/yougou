@@ -55,10 +55,8 @@ Component({
         key: 'searchData',
         success(res) {
           let searchData = res.data
-          if (searchData.indexOf(hisThis) !== -1) {
-            searchData.splice(searchData.indexOf(hisThis),1)
-          }
           searchData.unshift(hisThis)
+          searchData = [...new Set(searchData)]
           inThis.makeStorage(searchData)
         },
         fail(err){
