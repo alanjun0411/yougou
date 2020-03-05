@@ -1,7 +1,56 @@
 <!--pages/goods_list/index.wxml-->
-<view class="goods_list">
-  <!-- 搜索框 -->
-  <view class="searchs">
-    <search defValue="{{keyValue}}"></search>
+<view class="goods_list" bindtap="mainEvent">
+  <view class="goods_list_top">
+    <!-- 搜索框 -->
+    <view class="searchs">
+      <search defValue="{{keyValue}}"></search>
+    </view>
+    <!-- 参数框 -->
+    <view class="params">
+      <view data-index="comprehensive" class="params_comprehensive"
+      catchtap="comprehensive">
+        <text>综合</text>
+        <text class="iconfont {{gcomprehensive_B ? 'icon-icon-test1' : 'icon-icon-test3'}}"></text>
+      </view>
+      <view data-index="sales" class="params_sales"
+      bindtap="sales">
+        <text>销量</text>
+      </view>
+      <view data-index="price" class="params_price"
+      bindtap="price">
+        <text>价格</text>
+        <view>
+          <view wx:if="{{!params_price_style}}" class="params_price_updown">
+            <text class="iconfont icon-icon-test1"></text>
+            <text class="iconfont icon-icon-test3 params_price_updown_down"></text>
+          </view>
+          <text class="iconfont {{params_price_style === 'up' ? 'icon-icon-test1' : 'icon-icon-test3'}}" wx:else></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- content区域 -->
+  <view class="goods_list_content">
+    <view class="goods_list_content_one" wx:for="{{goods}}" wx:key="index" catchtap="goTogoods" data-index="{{item.goods_id}}">
+      <image class="goods_list_content_one_img" src="{{item.goods_big_logo}}"></image>
+      <view class="goods_list_content_one_title">
+        <view class="goods_list_content_one_name">
+          {{item.goods_name}}
+        </view>
+        <view class="goods_list_content_one_price">
+          ¥ {{item.goods_price}}.00
+        </view>
+      </view>
+    </view>
+    <view class="content_Loading" wx:if="{{loadings}}">加载中....</view>
+  </view>
+  <!-- 其他区域-综合 -->
+  <view class="gcomprehensive" wx:if="{{gcomprehensive_B}}">
+    <view></view>
+  </view>
+  <!-- 回到顶部 -->
+  <view class="goToTop" bindtap="gotoTop" wx:if="{{scrollTop}}">
+     <text class="iconfont icon-icon-test1 goToTopiconfont"></text>
+    <text>顶部</text>
   </view>
 </view>

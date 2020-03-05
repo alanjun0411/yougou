@@ -2,5 +2,6 @@
   "usingComponents": {
     "search": "../../components/com_search3/comSarch3"
   },
-  "navigationBarTitleText": "搜索结果"
+  "navigationBarTitleText": "搜索结果",
+  "onReachBottomDistance": 100
 }
