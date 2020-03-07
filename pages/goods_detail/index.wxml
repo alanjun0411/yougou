@@ -1,2 +1,18 @@
 <!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="goods_detail">
+  <!-- 轮播图 -->
+  <view class="rotationChart">
+    <swiper indicator-dots="{{indicatorDots}}" duration="{{500}}" bindchange="currentchange" circular="{{true}}">
+      <block wx:for="{{goods_data.pics}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.pics_big}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="currentNumber">
+      <text class="nowcurrent">{{current}}</text>
+      <text>/</text>
+      <text>{{goods_data.pics.length}}</text>
+    </view>
+  </view>
+</view>

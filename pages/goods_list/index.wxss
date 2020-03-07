@@ -63,6 +63,7 @@
   width: 100vw;
   background-color: rgba(0, 0, 0, .6);
   border-top: 1px solid #ccc;
+  z-index: 2;
 }
 .gcomprehensive view{
   width:100%;
