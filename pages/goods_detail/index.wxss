@@ -1,4 +1,7 @@
 /* pages/goods_detail/index.wxss */
+.goods_detail{
+  background-color: #ccc;
+}
 .rotationChart{
   position: relative;
   box-shadow: 0 1px 3px rgba(0, 0, 0,.3);
@@ -24,4 +27,72 @@
 }
 .currentNumber .nowcurrent{
   font-size: 35rpx;
+}
+.describe{
+  padding: 20rpx;
+  background-color: #fff;
+}
+.describe_goods_price{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.describe_goods_price text{
+  font-size: 25rpx;
+}
+.describe_goods_price_left{
+  display: flex;
+  color: #f83554;
+  padding-top: 9rpx;
+  box-sizing: border-box;
+  height: 78rpx
+}
+.describe_goods_price_left .describe_goods_price_left_big {
+  margin-left: 7rpx;
+  font-size: 40rpx;
+  line-height: 71rpx;
+  font-weight: 500;
+}
+.describe_goods_price_left{
+  line-height: 78rpx;
+}
+.describe_goods_price_right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.describe_goods_price_right .describe_goods_price_right_ico .iconfont{
+  font-size: 35rpx;
+}
+.describe_goods_name{
+  font-weight: 500;
+  margin-top: 20rpx;
+}
+.describe_title{
+  margin: 15rpx 0;
+  font-size: 25rpx;
+  color: #ccc;
+}
+.describe_gogo{
+  display: flex;
+  font-size: 25rpx;
+  color: #000;
+}
+.describe_gogo_ico{
+  border-radius: 25rpx;
+  border-bottom-right-radius: 0;
+  background-color: red;
+  padding: 0 7rpx;
+  color: #fff;
+  margin-right: 10rpx;
+  margin-bottom: 15rpx;
+}
+.describe_gogoTime{
+  display: flex;
+  font-size: 25rpx;
+}
+.describe_gogoTime .time{
+  color: #ccc;
+  margin-right: 10rpx;
 }

@@ -12,7 +12,8 @@
     autoplay="{{autoplay}}"
     interval="{{interval}}"
     duration="{{duration}}"
-    class="swiper_main">
+    class="swiper_main"
+    circular="{{true}}">
     <block wx:for="{{background}}" wx:key="index">
       <swiper-item>
         <navigator url="">

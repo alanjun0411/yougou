@@ -15,4 +15,33 @@
       <text>{{goods_data.pics.length}}</text>
     </view>
   </view>
+  <view class="describe">
+    <view class="describe_goods_price">
+      <view class="describe_goods_price_left">
+        <text>¥ </text>
+        <text class="describe_goods_price_left_big">{{goods_data.goods_price}}</text>
+        <text>.00</text>
+      </view>
+      <view class="describe_goods_price_right">
+        <view class="describe_goods_price_right_ico">
+          <text class="iconfont icon-shoucang"></text>
+        </view>
+        <text>收藏</text>
+      </view>
+    </view>
+    <view class="describe_goods_name">
+      {{goods_data.goods_name}}
+    </view>
+    <view class="describe_title">
+      <text>这是小标题，没有小标题，你们爱买不买，不买拉倒。</text>
+    </view>
+    <view class="describe_gogo">
+      <view class="describe_gogo_ico">秒杀预告</view>
+      <text>秒杀期间可享受超值价格优惠</text>
+    </view>
+    <view class="describe_gogoTime">
+      <view class="time">秒杀时间</view>
+      <view>03.08 00:00 - 03.08 23:59</view>
+    </view>
+  </view>
 </view>

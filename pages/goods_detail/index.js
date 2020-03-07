@@ -38,5 +38,8 @@ Page({
     this.setData({
       current: e.detail.current + 1
     })
+  },
+  onPageScroll: function (e) {
+    console.log(e)
   }
 })
