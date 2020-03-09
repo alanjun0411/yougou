@@ -16,7 +16,9 @@ Page({
     params_price_style: '',
     loadings: false,
     // 屏幕滑动
-    scrollTop: false
+    scrollTop: false,
+    // 是否还有数据
+    moData: true
   },
 
   /**
@@ -32,6 +34,7 @@ Page({
     this.getData()
   },
   getData: function () {
+    if (!this.data.moData) return
     wx.ajax({
       url: `/goods/search?query=${this.data.keyValue}&pagenum=${this.data.pagenum}&pagesize=${this.data.pagesize}`
     }).then((res) => {
@@ -43,6 +46,11 @@ Page({
         loadings: false,
         total: res.data.message.total
       })
+      if (this.data.pagenum * this.data.pagesize >= this.data.total) {
+        this.setData({
+          moData: false
+        })
+      }
       wx.hideLoading()
     })
   },

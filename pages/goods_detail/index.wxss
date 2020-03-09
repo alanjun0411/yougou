@@ -1,6 +1,7 @@
 /* pages/goods_detail/index.wxss */
 .goods_detail{
   background-color: #ccc;
+  padding-bottom: 50px;
 }
 .rotationChart{
   position: relative;
@@ -66,6 +67,7 @@
   font-size: 35rpx;
 }
 .describe_goods_name{
+  font-size: 40rpx;
   font-weight: 500;
   margin-top: 20rpx;
 }
@@ -95,4 +97,108 @@
 .describe_gogoTime .time{
   color: #ccc;
   margin-right: 10rpx;
+}
+comShopping{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.evaluate{
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.evaluate_top{
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 20rpx;
+  border-bottom: 1px solid #ccc;
+  font-size: 30rpx;
+}
+.evaluate_top_right{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 42rpx;
+  line-height: 42rpx;
+}
+.evaluate_top_right .iconfont{
+ font-size: 35rpx;
+}
+.evaluate_top_right_title{
+  color: #ccc;
+  font-size: 25rpx;
+}
+.evaluate_top_left_small{
+  font-size: 27rpx;
+  color: #f83554;
+  margin-left: 10rpx;
+}
+.evaluate_content{
+  color: #ccc;
+  font-size: 40rpx;
+  height: 200rpx;
+  text-align: center;
+  line-height: 200rpx;
+}
+.introduce{
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.introduce_top{
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.introduce_content_configure{
+  padding: 20rpx;
+}
+.introduce_content_configure_table{
+  border-top: 1px solid #ccc;
+}
+.introduce_content_configure_table_content{
+  display: flex;
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+.introduce_content_configure_table_content_right{
+  border-left: 1px solid #ccc;
+}
+.introduce_content_configure_table_content view{
+  padding: 10rpx;
+  width: 50%;
+}
+.good_mune{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: #fff;
+  color: #ccc;
+}
+.good_mune_main{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+}
+.good_mune_main view{
+  font-size: 14px;
+  padding: 5px 0;
+  border-bottom: 1px solid #fff;
+}
+.goToTop{
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #b5b5b5;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #fafafa;
+}
+.goToTopiconfont{
+  margin-top: 7rpx;
 }

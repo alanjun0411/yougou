@@ -5,7 +5,7 @@
     <swiper indicator-dots="{{indicatorDots}}" duration="{{500}}" bindchange="currentchange" circular="{{true}}">
       <block wx:for="{{goods_data.pics}}" wx:key="index">
         <swiper-item>
-          <image src="{{item.pics_big}}"></image>
+          <image src="{{item.pics_big}}" data-src="{{index}}" bindtap="toBigImg"></image>
         </swiper-item>
       </block>
     </swiper>
@@ -15,6 +15,7 @@
       <text>{{goods_data.pics.length}}</text>
     </view>
   </view>
+  <!-- 描述 -->
   <view class="describe">
     <view class="describe_goods_price">
       <view class="describe_goods_price_left">
@@ -43,5 +44,59 @@
       <view class="time">秒杀时间</view>
       <view>03.08 00:00 - 03.08 23:59</view>
     </view>
+  </view>
+  <!-- 评价 -->
+  <view class="evaluate">
+    <view class="evaluate_top">
+      <view class="evaluate_top_left">
+        <text>评价</text>
+        <text class="evaluate_top_left_small">好评100%</text>
+      </view>
+      <view class="evaluate_top_right">
+        <text class="evaluate_top_right_title">共0条评价</text>
+        <text class="iconfont icon-icon-test4"></text>
+      </view>
+    </view>
+    <view class="evaluate_content">
+      <text class="iconfont icon-weixiao-"></text>
+      暂无评价...
+    </view>
+  </view>
+  <!-- 商品介绍和评价 -->
+  <view class="introduce">
+    <view class="introduce_top">
+      <view class="introduce_top_title" bindtap="introducechange" data-index="1"
+      style="color:{{introduceID == 1 ? '#f83554' : ''}}">商品介绍</view>
+      <view class="introduce_top_title" bindtap="introducechange" data-index="2"
+      style="color:{{introduceID == 2 ? '#f83554' : ''}}">详情</view>
+    </view>
+    <view class="introduce_content">
+      <view class="introduce_content_main" wx:if="{{introduceID == 1}}">
+        <rich-text nodes="{{goods_data.goods_introduce}}"></rich-text>
+      </view>
+      <view class="introduce_content_configure" wx:else>
+        <view class="introduce_content_configure_table">
+          <view class="introduce_content_configure_table_content" wx:for="{{goods_data.attrs}}" wx:key="index">
+            <view class="introduce_content_configure_table_content_left">{{item.attr_name}}</view>
+            <view class="introduce_content_configure_table_content_right">{{item.attr_value}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <comShopping></comShopping>
+  <!-- 顶部标题 -->
+  <view class="good_mune" style="opacity:{{opacityNumber}}">
+    <view class="good_mune_main">
+      <view data-top="0" style="{{titleID === 1 ? 'color:#000;border-bottom-color:#f83554;' : ''}}"
+      bindtap="gotoTop">商品</view>
+      <view data-top="{{describeTop}}" style="{{titleID === 2 ? 'color:#000;border-bottom-color:#f83554;' : ''}}" bindtap="gotoTop">评价</view>
+      <view data-top="{{evaluateTop}}" style="{{titleID === 3 ? 'color:#000;border-bottom-color:#f83554;' : ''}}" bindtap="gotoTop">详情</view>
+    </view>
+  </view>
+  <!-- 回到顶部 -->
+  <view class="goToTop" data-top="0" bindtap="gotoTop" wx:if="{{scrollTop}}">
+     <text class="iconfont icon-icon-test1 goToTopiconfont"></text>
+    <text>顶部</text>
   </view>
 </view>

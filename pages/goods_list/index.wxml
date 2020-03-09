@@ -42,7 +42,7 @@
         </view>
       </view>
     </view>
-    <view class="content_Loading" wx:if="{{loadings}}">加载中....</view>
+    <view class="content_Loading" wx:if="{{loadings}}">{{moData ? '加载中' : '我也是有底线的'}}....</view>
   </view>
   <!-- 其他区域-综合 -->
   <view class="gcomprehensive" wx:if="{{gcomprehensive_B}}">

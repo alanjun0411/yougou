@@ -1,1 +1,53 @@
 /* components/comShopping/comShopping.wxss */
+@import "../../common/style.wxss";
+.comShopping{
+  display: flex;
+  height: 50px;
+  background-color: #fff;
+  width: 100vw;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .3)
+}
+.comShoppingFun{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  height: 100%;
+  text-align: center;
+  font-size: 12px;
+}
+.comShoppingFun_one{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.comShoppingFun_one .cartNumber{
+  position: absolute;
+  top: 2px;
+  right: -2px;
+  background-color: red;
+  color: #fff;
+  font-size: 10px;
+  border-radius: 6px;
+  padding: 0 2px;
+}
+.comShopping_cart{
+  background-color: #feeb59;
+}
+.comShopping_buy{
+  background-color: red;
+}
+.comShopping_cart_buy{
+  color: #fff;
+  width: 30%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+}
+.customerService{
+  position: absolute;
+  top: 0;
+  left: 5px;
+  height: 100%;
+  opacity: 0;
+}

@@ -6,14 +6,14 @@
       <text class="iconfont icon-sousuo"></text>
     </view>
     <view class="search_mian_input_input">
-      <input class="weui-input searchinput" focus="{{foucs}}" bindinput="bindKeyInput" placeholder="输入你想要的商品" type="text" value="{{inputValue}}" bindconfirm="inputconfirm"/>
+      <input class="weui-input searchinput" focus="{{foucs}}" bindinput="bindKeyInput" placeholder="输入你想要的商品" type="text" value="{{inputValue}}" bindconfirm="inputconfirm" bindblur="inputBlur" bindfocus="inputFocus"/>
     </view>
     <view class="search_mian_input_ico" wx:if="{{inputValue}}">
       <text class="iconfont icon-shibai" bindtap="bindDeleteInput"></text>
     </view>
    </view>
    <!-- 选择列表 -->
-   <view class="selectList" style="height: {{newHeight}}px;" wx:if="{{keyValue.length !== 0}}">
+   <view class="selectList" style="height: {{newHeight}}px;" wx:if="{{keyValue.length !== 0 && inputBlur}}">
       <scroll-view scroll-y="true" style="height: 100%;">
         <view class="selectList_one" wx:for="{{keyValue}}" wx:key="index" id="{{item.goods_id}}" bindtap="selectTo">{{item.goods_name}}</view>
       </scroll-view>

@@ -1,2 +1,29 @@
 <!--components/comShopping/comShopping.wxml-->
-<text>components/comShopping/comShopping.wxml</text>
+<view class="comShopping">
+  <view class="comShoppingFun">
+    <view class="comShoppingFun_one">
+      <view>
+        <text class="iconfont icon-wode"></text>
+      </view>
+      <view>
+        <text>客服</text>
+      </view>
+    </view>
+    <view class="comShoppingFun_one" bindtap="gotocart">
+      <view>
+        <text class="iconfont icon-gouwuche"></text>
+      </view>
+      <view>
+        <text>购物车</text>
+      </view>
+      <view class="cartNumber" wx:if="{{cartNumber}}">{{cartNumber > 99 ? '99+' : cartNumber}}</view>
+    </view>
+  </view>
+  <view class="comShopping_cart comShopping_cart_buy">
+    加入购物车
+  </view>
+  <view class="comShopping_buy comShopping_cart_buy">
+    立即购买
+  </view>
+  <button class="customerService" size="mini" open-type="contact">客服</button>
+</view>

@@ -15,7 +15,8 @@ Component({
     foucs: true,
     keyValue: [],
     newHeight: 0,
-    loading: false
+    loading: false,
+    inputBlur: true
   },
 
   /**
@@ -110,6 +111,16 @@ Component({
         if (value !== this.data.inputValue) {
           this.getData(this.data.inputValue)
         }
+      })
+    },
+    inputBlur: function (e) {
+      this.setData({
+        inputBlur: false
+      })
+    },
+    inputFocus: function () {
+      this.setData({
+        inputBlur: true
       })
     }
   }

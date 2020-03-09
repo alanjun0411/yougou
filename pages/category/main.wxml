@@ -31,7 +31,7 @@
               </view>
               <view class="onecontent_right_content_one_title_content">
                 <block wx:for="{{item.children}}" wx:key="index">
-                  <navigator url="">
+                  <navigator url="/pages/goods_list/index?query={{item.cat_name}}">
                     <view class="onecontent_right_content_one_title_content_one">
                     <view>
                       <image mode="aspectFill" src="{{item.cat_icon}}"></image>

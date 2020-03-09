@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "comShopping": "../../components/comShopping/comShopping"
+  },
   "navigationBarTitleText": "商品详情"
 }
