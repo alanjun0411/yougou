@@ -42,10 +42,10 @@
           </view>
         </view>
         <view class="cart_full_main_content">
-          <view class="cart_full_main_content_one" wx:for="{{goCart}}" wx:key="index" data-index="{{index}}">
+          <view class="cart_full_main_content_one" wx:for="{{goCart}}" wx:key="index" data-index="{{index}}" bindtap="goToDetail" data-el="main">
             <view class="cart_full_main_content_one_ico">
-              <text class="iconfont icon-shanchu" wx:if="{{clearOrNo}}" bindtap="clearOne" data-index="{{index}}"></text>
-              <text class="iconfont icon-chenggong" wx:else style="{{item.select ? 'color:#f83554' : ''}}" bindtap="selectOne" data-index="{{index}}"></text>
+              <text class="iconfont icon-shanchu" wx:if="{{clearOrNo}}" catchtap="clearOne" data-index="{{index}}"></text>
+              <text class="iconfont icon-chenggong" wx:else style="{{item.select ? 'color:#f83554' : ''}}" catchtap="selectOne" data-index="{{index}}"></text>
             </view>
             <view>
               <image class="cart_full_main_content_one_img" src="{{item.goods_big_logo}}"></image>
@@ -58,11 +58,11 @@
                   <text> {{item.goods_price}}</text>
                 </view>
                 <view class="cart_full_main_content_one_msg_price2">
-                  <view class="cart_full_main_content_one_msg_price2_add" data-index="{{index}}" bindtap="priceAddAndReduce" data-bl="{{false}}">-</view>
+                  <view class="cart_full_main_content_one_msg_price2_add" data-index="{{index}}" catchtap="priceAddAndReduce" data-bl="{{false}}">-</view>
                   <view class="cart_full_main_content_one_msg_price2_middle">
-                    <input value="{{item.num}}" bindinput="inputNum" data-index="{{index}}"></input>
+                    <input value="{{item.num}}" type="number" data-index="{{index}}" catchblur="inputFoucs"></input>
                   </view>
-                  <view class="cart_full_main_content_one_msg_price2_add" data-index="{{index}}" bindtap="priceAddAndReduce" data-bl="{{true}}">+</view>
+                  <view class="cart_full_main_content_one_msg_price2_add" data-index="{{index}}" catchtap="priceAddAndReduce" data-bl="{{true}}">+</view>
                 </view>
               </view>
             </view>

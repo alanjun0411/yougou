@@ -128,25 +128,43 @@ Page({
   goShoppingCart: function () {
     let good = this.data.goods_data
     let oldCart = []
-    let shoppingCart = {
-      goods_big_logo: good.goods_big_logo,
-      num: 1,
-      goods_name: good.goods_name,
-      goods_id: good.goods_id,
-      goods_price: good.goods_price,
-      select: false
-    }
     wx.getStorage({
       key: 'goCart',
       success: (res) => {
         oldCart = res.data
         let key = oldCart.find(v => {
-          if (v.goods_id === shoppingCart.goods_id) {
+          if (v.goods_id === good.goods_id) {
             v.num++
-            return 1
           }
+          return v.goods_id === good.goods_id
         })
-        if (!key) oldCart.unshift(shoppingCart)
+        if (!key) {
+          oldCart.unshift({
+            goods_big_logo: good.goods_big_logo,
+            num: 1,
+            goods_name: good.goods_name,
+            goods_id: good.goods_id,
+            goods_price: good.goods_price,
+            select: false
+          })
+        } else {
+          wx.getStorage({
+            key: 'selectCart',
+            success: (res) => {
+              let oldSelect = res.data
+              oldSelect.find(v => {
+                if (v.goods_id === good.goods_id) {
+                  v.num++
+                }
+                return v.goods_id === good.goods_id
+              })
+              wx.setStorage({
+                key: 'selectCart',
+                data: oldSelect,
+              })
+            },
+          })
+        }
         wx.setStorage({
           key: 'goCart',
           data: oldCart,

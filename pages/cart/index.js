@@ -142,12 +142,14 @@ Page({
           let { index } = e.currentTarget.dataset
           let good = inThis.data.goCart
           let selectCart = inThis.data.selectCart
-          let clearID = good.splice(index, 1).goods_id
-          selectCart.forEach((v, i) => {
-            if (clearID === v.goods_id) {
-              selectCart.splice(i, 1)
-            }
-          })
+          let clearGood = good.splice(index, 1)[0]
+          if (clearGood.select) {
+            selectCart.forEach((v, i) => {
+              if (clearGood.goods_id === v.goods_id) {
+                selectCart.splice(i, 1)
+              }
+            })
+          }
           wx.setStorage({
             key: 'goCart',
             data: good,
@@ -180,6 +182,9 @@ Page({
           wx.setStorage({
             key: 'selectCart',
             data: selectCart,
+            success: () => {
+              inThis.calculation(selectCart)
+            }
           })
         }
       }
@@ -187,11 +192,9 @@ Page({
   },
   selectOne: function (e) {
     let { index } = e.currentTarget.dataset
-    console.log(index)
     let good = this.data.goCart
     let select = this.data.selectCart
     good[index].select = !good[index].select
-    console.log(good[index].select)
     if (good[index].select) {
       select.push({...good[index]})
     } else {
@@ -210,15 +213,7 @@ Page({
         selectAll: false
       })
     }
-    wx.setStorage({
-      key: 'goCart',
-      data: good,
-      success: () => {
-        this.setData({
-          goCart: good
-        })
-      }
-    })
+    this.storageData(good)
     wx.setStorage({
       key: 'selectCart',
       data: select,
@@ -239,18 +234,15 @@ Page({
         ...v
       }
     })
-    wx.setStorage({
-      key: 'goCart',
-      data: newGood,
-    })
+    this.storageData(newGood)
     wx.setStorage({
       key: 'selectCart',
       data: selectKey ? [...newGood] : [],
     })
     this.setData({
-      goCart: newGood,
       selectAll: selectKey,
-      selectCart: selectKey ? [...newGood] : []
+      selectCart: selectKey ? [...newGood] : [],
+      clearOrNo: false
     })
     this.calculation(selectKey ? [...newGood] : [])
     
@@ -264,16 +256,19 @@ Page({
       allPrice
     })
   },
-  inputNum: function (e) {
+  inputFoucs: function (e) {
+    let value = Math.floor(parseInt(e.detail.value))
     let good = this.data.goCart
     let select = this.data.selectCart
     let { index } = e.currentTarget.dataset
-    let { value } = e.detail
-    good[index].num = parseInt(value)
+    if (!value || value < 1) {
+      value = 1
+    }
+    good[index].num = value
     if (good[index].select) {
       select.forEach(v => {
         if (v.goods_id === good[index].goods_id) {
-          v.num = parseInt(value)
+          v.num = value
         }
       })
       wx.setStorage({
@@ -287,6 +282,9 @@ Page({
         }
       })
     }
+    this.storageData(good)
+  },
+  storageData: function (good) {
     wx.setStorage({
       key: 'goCart',
       data: good,
@@ -296,5 +294,13 @@ Page({
         })
       }
     })
+  },
+  goToDetail: function (e) {
+    let good = this.data.goCart
+    if (!e.target.dataset.index && e.target.dataset.index !== 0) {
+      wx.navigateTo({
+        url: `/pages/goods_detail/index?id=${good[e.currentTarget.dataset.index].goods_id}`
+      })
+    }
   }
 })
