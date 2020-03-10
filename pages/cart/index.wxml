@@ -1,2 +1,96 @@
 <!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="carts">
+  <view class="noLogin" wx:if="{{!noLogin}}">
+    <view class="noLogin_main">
+      <view class="title">您还没有登录!</view>
+      <view class="button">现在去登录</view>
+    </view>
+  </view>
+  <view class="Login">
+    <view class="cart_empty" wx:if="{{goCart.length === 0}}">
+      <view class="cart_empty_main">
+        <image class="cart_empty_img" src="../../images/cart_empty@2x.png"></image>
+        <view>购物车空空如也</view>
+      </view>
+    </view>
+    <view class="cart_full" wx:else>
+      <view class="user_msg">
+        <view class="user_msg_name">
+          <view>收货人: 林</view>
+          <view>
+            <text>15374098663</text>
+            <text class="iconfont icon-icon-test4"></text>
+          </view>
+        </view>
+        <view class="user_msg_ass">
+          收货地址: {{'广东省广州市'}}
+        </view>
+        <image src="../../images/cart_border@2x.png"></image>
+      </view>
+      <view class="cart_full_main">
+        <view class="cart_full_main_title">
+          <view>
+            <text class="iconfont icon-dianpu"></text>
+            <text> 优购生活馆</text>
+          </view>
+          <view>
+            <view class="clearCart" wx:if="{{clearOrNo}}">
+              <text class="clearCartCfim" bindtap="clearOrNoFun" data-bl="cancel">取消 </text>/
+              <text class="clearCartClearAll" bindtap="clearOrNoFun"> 清空</text>
+            </view>
+             <text class="iconfont icon-shanchu" wx:else bindtap="clearOrNoFun" data-bl="clear"></text>
+          </view>
+        </view>
+        <view class="cart_full_main_content">
+          <view class="cart_full_main_content_one" wx:for="{{goCart}}" wx:key="index" data-index="{{index}}">
+            <view class="cart_full_main_content_one_ico">
+              <text class="iconfont icon-shanchu" wx:if="{{clearOrNo}}" bindtap="clearOne" data-index="{{index}}"></text>
+              <text class="iconfont icon-chenggong" wx:else style="{{item.select ? 'color:#f83554' : ''}}" bindtap="selectOne" data-index="{{index}}"></text>
+            </view>
+            <view>
+              <image class="cart_full_main_content_one_img" src="{{item.goods_big_logo}}"></image>
+            </view>
+            <view class="cart_full_main_content_one_msg">
+              <view class="cart_full_main_content_one_msg_title">{{item.goods_name}}</view>
+              <view class="cart_full_main_content_one_msg_price">
+                <view class="cart_full_main_content_one_msg_price1">
+                  <text class="cart_full_main_content_one_msg_price_yuan">¥</text>
+                  <text> {{item.goods_price}}</text>
+                </view>
+                <view class="cart_full_main_content_one_msg_price2">
+                  <view class="cart_full_main_content_one_msg_price2_add" data-index="{{index}}" bindtap="priceAddAndReduce" data-bl="{{false}}">-</view>
+                  <view class="cart_full_main_content_one_msg_price2_middle">
+                    <input value="{{item.num}}" bindinput="inputNum" data-index="{{index}}"></input>
+                  </view>
+                  <view class="cart_full_main_content_one_msg_price2_add" data-index="{{index}}" bindtap="priceAddAndReduce" data-bl="{{true}}">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view style="height:39px"></view>
+        </view>
+        <view class="cart_full_main_button">
+          <view class="cart_full_main_button_ioc">
+            <text class="iconfont icon-chenggong" style="{{selectAll ? 'color:#f83554' : ''}}" bindtap="selectAll"></text>
+          </view>
+          <view class="cart_full_main_button_all">全选</view>
+          <view class="cart_full_main_button_kongbai"></view>
+          <view class="cart_full_main_button3">
+            <view class="cart_full_main_button_add">
+              <text>合计: </text>
+              <view class="cart_full_main_button_add_price">
+                <text class="cart_full_main_button_add_yuan">¥</text>
+                <text> {{allPrice}}</text>
+              </view>
+            </view>
+            <view class="cart_full_main_button3_you">包含邮费</view>
+          </view>
+          <view class="cart_full_main_button_main">
+            <text>结算</text>
+            <text wx:if="{{selectCart.length !== 0}}">({{selectCart.length}})</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

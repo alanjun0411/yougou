@@ -19,7 +19,7 @@
       <view class="cartNumber" wx:if="{{cartNumber}}">{{cartNumber > 99 ? '99+' : cartNumber}}</view>
     </view>
   </view>
-  <view class="comShopping_cart comShopping_cart_buy">
+  <view class="comShopping_cart comShopping_cart_buy" bindtap="goShoppingCart">
     加入购物车
   </view>
   <view class="comShopping_buy comShopping_cart_buy">

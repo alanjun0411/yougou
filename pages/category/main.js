@@ -23,6 +23,23 @@ Page({
       })
     })
   },
+  onShow: function () {
+    wx.getStorage({
+      key: 'goCart',
+      success: (res) => {
+        if (res.data.length === 0) {
+          wx.removeTabBarBadge({
+            index: 2
+          })
+        } else {
+          wx.setTabBarBadge({
+            index: 2,
+            text: res.data.length + ''
+          })
+        }
+      },
+    })
+  },
   categoriesChange (e) {
     this.setData({
       selectID: e.currentTarget.dataset.index,

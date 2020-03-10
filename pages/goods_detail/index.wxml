@@ -84,7 +84,7 @@
       </view>
     </view>
   </view>
-  <comShopping></comShopping>
+  <comShopping bindgoShoppingCart="goShoppingCart" cartNumber="{{cartNumber}}"></comShopping>
   <!-- 顶部标题 -->
   <view class="good_mune" style="opacity:{{opacityNumber}}">
     <view class="good_mune_main">

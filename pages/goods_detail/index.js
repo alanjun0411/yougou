@@ -21,7 +21,9 @@ Page({
     evaluateTop: 0,
     scrollTop: false,
     // 图片墙
-    imgEvent: []
+    imgEvent: [],
+    // 购物车的商品数量
+    cartNumber: 0
 
   },
 
@@ -46,6 +48,15 @@ Page({
         imgEvent
       })
       wx.hideLoading()
+    })
+    wx.getStorage({
+      key: 'goCart',
+      success: (res) => {
+        this.setData({
+          cartNumber: res.data.length
+        })
+        console.log(res.data.length)
+      },
     })
   },
   onShow: function() {
@@ -112,6 +123,45 @@ Page({
     wx.previewImage({
       current: this.data.imgEvent[e.currentTarget.dataset.src], // 当前显示图片的http链接
       urls: this.data.imgEvent // 需要预览的图片http链接列表
+    })
+  },
+  goShoppingCart: function () {
+    let good = this.data.goods_data
+    let oldCart = []
+    let shoppingCart = {
+      goods_big_logo: good.goods_big_logo,
+      num: 1,
+      goods_name: good.goods_name,
+      goods_id: good.goods_id,
+      goods_price: good.goods_price,
+      select: false
+    }
+    wx.getStorage({
+      key: 'goCart',
+      success: (res) => {
+        oldCart = res.data
+        let key = oldCart.find(v => {
+          if (v.goods_id === shoppingCart.goods_id) {
+            v.num++
+            return 1
+          }
+        })
+        if (!key) oldCart.unshift(shoppingCart)
+        wx.setStorage({
+          key: 'goCart',
+          data: oldCart,
+          success: () => {
+            this.setData({
+              cartNumber: oldCart.length
+            })
+            wx.showToast({
+              title: '加入成功',
+              icon: 'success',
+              duration: 1000
+            })
+          }
+        })
+      },
     })
   }
 })
