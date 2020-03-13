@@ -302,5 +302,10 @@ Page({
         url: `/pages/goods_detail/index?id=${good[e.currentTarget.dataset.index].goods_id}`
       })
     }
+  },
+  buyShopping: function () {
+    wx.navigateTo({
+      url: `/pages/order_enter/index?type=${1}`,
+    })
   }
 })

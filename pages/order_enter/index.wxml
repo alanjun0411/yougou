@@ -23,7 +23,7 @@
           </view>
         </view>
         <view class="cart_full_main_content">
-          <view class="cart_full_main_content_one" wx:for="{{goCart}}" wx:key="index" data-index="{{index}}" bindtap="goToDetail" data-el="main">
+          <view class="cart_full_main_content_one" wx:for="{{selectCart}}" wx:key="index" data-index="{{index}}" data-el="main">
             <view>
               <image class="cart_full_main_content_one_img" src="{{item.goods_big_logo}}"></image>
             </view>

@@ -27,6 +27,9 @@ Component({
     },
     goShoppingCart: function () {
       this.triggerEvent('goShoppingCart')
+    },
+    buyShopping: function () {
+      this.triggerEvent('buyShopping')
     }
   }
 })

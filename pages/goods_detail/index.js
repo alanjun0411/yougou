@@ -181,5 +181,23 @@ Page({
         })
       },
     })
+  },
+  buyShopping: function () {
+   
+    let good = this.data.goods_data
+    let obj = {
+      goods_big_logo: good.goods_big_logo,
+      num: 1,
+      goods_name: good.goods_name,
+      goods_id: good.goods_id,
+      goods_price: good.goods_price
+    }
+    wx.setStorage({
+      key: 'buyShopping',
+      data: [obj],
+    })
+    wx.navigateTo({
+      url: `/pages/order_enter/index?type=${0}`,
+    })
   }
 })

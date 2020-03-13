@@ -85,7 +85,7 @@
             </view>
             <view class="cart_full_main_button3_you">包含邮费</view>
           </view>
-          <view class="cart_full_main_button_main">
+          <view class="cart_full_main_button_main" bindtap="buyShopping">
             <text>结算</text>
             <text wx:if="{{selectCart.length !== 0}}">({{selectCart.length}})</text>
           </view>

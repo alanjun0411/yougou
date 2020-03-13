@@ -7,33 +7,41 @@ Page({
   data: {
     goCart: [],
     selectCart: [],
-    allPrice: 0
+    allPrice: 0,
+    typeBuy: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      typeBuy: Number(options.type)
+    })
   },
   onShow: function () {
-    wx.getStorage({
-      key: 'goCart',
-      success:  (res1) =>{
+   if (this.data.typeBuy) {
+     wx.getStorage({
+       key: 'selectCart',
+       success: (res) => {
+         this.setData({
+           selectCart: res.data
+         })
+         this.calculation(res.data)
+       },
+     })
+   } else {
+     wx.getStorage({
+       key: 'buyShopping',
+       success: (res) => {
+        console.log(res.data)
         this.setData({
-          goCart: res1.data,
+          selectCart: res.data
         })
-        wx.getStorage({
-          key: 'selectCart',
-          success: (res2) => {
-            this.setData({
-              selectCart: res2.data
-            })
-            this.calculation(res2.data)
-          },
-        })
-       
-      },
-    })
+         this.calculation(res.data)
+       },
+     })
+   }
   },
   calculation: function (data) {
     let allPrice = 0
