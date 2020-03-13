@@ -1,0 +1,128 @@
+/* pages/cart/index.wxss */
+.orders{
+  background: #ccc;
+}
+.cart_full image{
+  display: block;
+  width: 100vw;
+  height: 10px;
+}
+.user_msg{
+  background-color: #fff;
+}
+.user_msg_name{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-bottom: 0;
+}
+.user_msg_ass{
+  padding: 10px;
+}
+.cart_full_main{
+  margin-top: 15px;
+  background: #fff;
+}
+.cart_full_main_title{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+.cart_full_main_title .iconfont{
+  color: #ccc;
+}
+.cart_full_main_content_one{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.cart_full_main_content_one .cart_full_main_content_one_img{
+  display: block;
+  margin-left: 8px;
+  width: 80px;
+  height: 80px;
+}
+.cart_full_main_content_one_msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  flex: 1;
+}
+.cart_full_main_content_one_msg_title{
+  -webkit-line-clamp:2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.cart_full_main_content_one_msg_price_yuan{
+  font-size: 12px;
+}
+.cart_full_main_content_one_msg_price1{
+  color: #f83554;
+  padding-top: 10px;
+}
+.cart_full_main_content_one_msg_price{
+  display: flex;
+  justify-content: space-between;
+}
+.cart_full_main_content_one_msg_price2{
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  color: #ccc;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.cart_full_main_button{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  box-shadow: 0 0 5px #ccc;
+  background-color: #fff;
+  z-index: 2;
+}
+.cart_full_main_button_main{
+  flex: 1;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  line-height: 39px;
+}
+.cart_full_main_button_add{
+  display: flex;
+  justify-content: flex-start;
+}
+.cart_full_main_button3{
+  padding: 0 10px;
+  width: 35%;
+}
+.cart_full_main_button_ioc{
+  color: #ccc;
+  margin-right: 8px;
+  height: 39px;
+  line-height: 39px;
+}
+.cart_full_main_button3_you{
+  color: #ccc;
+  font-size: 12px;
+}
+.cart_full_main_button_add_price{
+  margin-left: 10px;
+  color: #f83554;
+}
+.cart_full_main_button_add_yuan{
+  font-size: 12px;
+}
+.cart_full_main_button_ioc .icon-chenggong{
+  font-size: 20px;
+}
+.cart_full_main_button_all{
+  height: 39px;
+  line-height: 39px;
+}

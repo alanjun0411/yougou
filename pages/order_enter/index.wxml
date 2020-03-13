@@ -1,0 +1,63 @@
+<!--pages/cart/index.wxml-->
+<view class="orders">
+  <view class="Login">
+    <view class="cart_full">
+      <view class="user_msg">
+        <view class="user_msg_name">
+          <view>收货人: 林</view>
+          <view>
+            <text>15374098663</text>
+            <text class="iconfont icon-icon-test4"></text>
+          </view>
+        </view>
+        <view class="user_msg_ass">
+          收货地址: {{'广东省广州市'}}
+        </view>
+        <image src="../../images/cart_border@2x.png"></image>
+      </view>
+      <view class="cart_full_main">
+        <view class="cart_full_main_title">
+          <view>
+            <text class="iconfont icon-dianpu"></text>
+            <text> 优购生活馆</text>
+          </view>
+        </view>
+        <view class="cart_full_main_content">
+          <view class="cart_full_main_content_one" wx:for="{{goCart}}" wx:key="index" data-index="{{index}}" bindtap="goToDetail" data-el="main">
+            <view>
+              <image class="cart_full_main_content_one_img" src="{{item.goods_big_logo}}"></image>
+            </view>
+            <view class="cart_full_main_content_one_msg">
+              <view class="cart_full_main_content_one_msg_title">{{item.goods_name}}</view>
+              <view class="cart_full_main_content_one_msg_price">
+                <view class="cart_full_main_content_one_msg_price1">
+                  <text class="cart_full_main_content_one_msg_price_yuan">¥</text>
+                  <text> {{item.goods_price}}</text>
+                </view>
+                <view class="cart_full_main_content_one_msg_price2">
+                  数量*{{item.num}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <view style="height:39px"></view>
+        </view>
+        <view class="cart_full_main_button">
+          <view class="cart_full_main_button3">
+            <view class="cart_full_main_button_add">
+              <text>合计: </text>
+              <view class="cart_full_main_button_add_price">
+                <text class="cart_full_main_button_add_yuan">¥</text>
+                <text> {{allPrice}}</text>
+              </view>
+            </view>
+            <view class="cart_full_main_button3_you">包含邮费</view>
+          </view>
+          <view class="cart_full_main_button_main">
+            <text>立即支付</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
